@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/insurance_db
     username: postgres
-    password: postgres
+    password: root
 
   jpa:
     hibernate:
