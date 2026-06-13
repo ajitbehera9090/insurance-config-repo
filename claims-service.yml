@@ -1,0 +1,8 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: CLAIMS-SERVICE
+
+message: Claims Service Configuration Loaded
