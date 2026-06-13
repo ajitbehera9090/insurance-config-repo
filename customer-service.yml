@@ -5,4 +5,17 @@ spring:
   application:
     name: CUSTOMER-SERVICE
 
-message: Customer Service Configuration Loaded
+  datasource:
+    url: jdbc:postgresql://localhost:5432/insurance_db
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
