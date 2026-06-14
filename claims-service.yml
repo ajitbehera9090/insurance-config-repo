@@ -2,7 +2,27 @@ server:
   port: 8083
 
 spring:
-  application:
-    name: CLAIMS-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/insurance_db
+    username: postgres
+    password: root
 
-message: Claims Service Configuration Loaded
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: Claims Service
+    version: 1.0.0
