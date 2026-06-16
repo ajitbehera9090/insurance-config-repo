@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+
+  cloud:
+
+    gateway:
+
+      routes:
+
+        - id: customer-service
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customers/**
+
+        - id: policy-service
+          uri: lb://POLICY-SERVICE
+          predicates:
+            - Path=/policies/**
+
+        - id: claims-service
+          uri: lb://CLAIMS-SERVICE
+          predicates:
+            - Path=/claims/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: API Gateway
+    version: 1.0.0
