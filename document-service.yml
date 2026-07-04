@@ -1,0 +1,51 @@
+server:
+  port: 8086
+
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/insurance_document_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+
+document:
+
+  upload-path: D:/InsuranceDocuments
+
+  allowed-types:
+    - application/pdf
+    - image/jpeg
+    - image/png
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    root: INFO
+    com.insurance.documentservice: DEBUG
