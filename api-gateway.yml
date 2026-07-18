@@ -25,6 +25,14 @@ spring:
               uri: lb://CLAIMS-SERVICE
               predicates:
                 - Path=/claims/**
+            - id: payment-service
+              uri: lb://PAYMENT-SERVICE
+              predicates:
+                - Path=/payments/**
+            - id: document-service
+              uri: lb://DOCUMENT-SERVICE
+              predicates:
+                - Path=/documents/**
 
 eureka:
   client:
