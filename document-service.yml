@@ -27,6 +27,9 @@ document:
   storage:
     root-folder: "C:/Data/insurance-documents"
 
+file:
+  upload-dir: "C:/Data/insurance-documents/uploads"
+
 eureka:
   client:
     service-url:
